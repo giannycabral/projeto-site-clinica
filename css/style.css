@@ -1,0 +1,729 @@
+/* Variáveis de cores */
+:root {
+    --cor-principal: #0d6e71;
+    --cor-hover: #00cad1;
+    --cor-texto: #666;
+    --cor-clara: #f7f7f7;
+    --cor-branca: #fff;
+    --sombra-padrao: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Reset e configurações globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    line-height: 1.5;
+    color: var(--cor-texto);
+}
+
+/* Remove formatação de listas */
+ul,
+ol {
+    list-style: none;
+}
+
+/* Remove decoração de links */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Remove estilo padrão de botões */
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+/* Remove bordas de imagens */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Utilitários */
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.secao-padrao {
+    padding: 100px 0;
+}
+
+/* Cabeçalho */
+.topo {
+    width: 100%;
+    background-color: var(--cor-principal);
+    box-shadow: var(--sombra-padrao);
+}
+
+/* Ajustes na navegação */
+.topo-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topo-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 5px;
+}
+
+.topo-logo-texto {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--cor-principal);
+    margin: 0;
+}
+
+/* Ajuste da logo do topo */
+.topo-logo-imagem {
+    height: 60px;
+    /* Aumentado de 40px para 60px */
+}
+
+/* Navegação */
+.topo-nav {
+    display: flex;
+    align-items: center;
+}
+
+.topo-links {
+    display: flex;
+    gap: 30px;
+}
+
+/* Atualização dos links para contraste com o fundo escuro */
+.topo-links a {
+    color: var(--cor-branca);
+    font-weight: 600;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.topo-links a:hover {
+    color: var(--cor-clara);
+}
+
+.banner {
+    background-image: url('../assets/recepcao.png');
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    position: relative;
+}
+
+.banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Ajustes no banner */
+.banner-container {
+    max-width: 1200px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.banner-titulo {
+    font-size: 48px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.banner-texto {
+    font-size: 24px;
+    color: #ffffff;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.sobre {
+    padding: 100px 0;
+    background-color: var(--cor-clara);
+}
+
+.sobre-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.sobre-conteudo {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.sobre-titulo {
+    font-size: 32px;
+    color: var(--cor-principal);
+    margin-bottom: 20px;
+}
+
+.sobre-texto {
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--cor-texto);
+}
+
+.diferenciais {
+    padding: 100px 0;
+}
+
+/* Ajustes na seção diferenciais */
+.diferenciais-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+/* Ajuste na imagem de diferenciais */
+.diferenciais-imagem {
+    max-width: 350px;
+    width: 250px;
+    height: 300px;
+    border-radius: 10px;
+    object-fit: cover;
+    object-position: center;
+    flex-shrink: 0;
+    /* Impede que a imagem encolha */
+}
+
+.diferenciais-conteudo {
+    flex: 1;
+    max-width: 600px;
+    /* Limita a largura do conteúdo */
+}
+
+.diferenciais-titulo {
+    font-size: 24px;
+    color: var(--cor-principal);
+    margin-bottom: 30px;
+}
+
+.diferenciais-lista {
+    list-style: none;
+    padding: 0;
+}
+
+.diferenciais-lista li {
+    font-size: 18px;
+    color: var(--cor-texto);
+    margin-bottom: 15px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.diferenciais-lista li::before {
+    content: "•";
+    color: var(--cor-principal);
+    position: absolute;
+    left: 0;
+}
+
+@media (max-width: 768px) {
+    .diferenciais-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .diferenciais-imagem {
+        max-width: 350px;
+        width: 300px;
+        height: 350px;
+        margin-bottom: 30px;
+    }
+}
+
+.especialidades {
+    padding: 100px 0;
+    background-color: var(--cor-branca);
+}
+
+/* Ajustes na seção especialidades */
+.especialidades-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    /* Adiciona alinhamento central */
+}
+
+.especialidades-descricao {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px;
+}
+
+.especialidades-titulo {
+    font-size: 32px;
+    color: var(--cor-principal);
+    margin-bottom: 20px;
+}
+
+.especialidades-texto {
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--cor-texto);
+}
+
+.especialidades-imagens {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.especialidade-item {
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    text-align: center;
+}
+
+.especialidade-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    /* Adicionado sombreamento */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Adicionada transição suave */
+}
+
+.especialidade-img:hover {
+    transform: translateY(-5px);
+    /* Efeito de elevação ao passar o mouse */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    /* Sombra mais pronunciada no hover */
+}
+
+.especialidade-legenda {
+    font-size: 20px;
+    color: var(--cor-principal);
+    font-weight: 600;
+}
+
+.especialidade-legenda a {
+    color: var(--cor-principal);
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.especialidade-legenda a:hover {
+    color: var(--cor-hover);
+}
+
+@media (max-width: 768px) {
+    .especialidade-item {
+        min-width: 100%;
+        max-width: 100%;
+    }
+
+    .especialidades-imagens {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.btn-horarios {
+    display: inline-block;
+    background-color: var(--cor-principal);
+    color: var(--cor-branca);
+    padding: 15px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    margin-top: 40px;
+    /* Aumenta o espaçamento superior */
+    transition: background-color 0.3s ease;
+}
+
+.btn-horarios:hover {
+    background-color: var(--cor-hover);
+}
+
+.contato {
+    padding: 100px 0;
+    background-color: var(--cor-clara);
+}
+
+/* Ajustes no contato */
+.contato-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.contato-titulo {
+    font-size: 32px;
+    color: var(--cor-principal);
+    margin-bottom: 40px;
+}
+
+.contato-info {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contato-texto {
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--cor-texto);
+    margin-bottom: 20px;
+}
+
+.contato-texto span {
+    color: var(--cor-principal);
+    font-weight: 600;
+}
+
+.contato-texto:last-child {
+    margin-bottom: 0;
+}
+
+.contato-mapa {
+    margin-top: 40px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.contato-mapa iframe {
+    width: 100%;
+    height: 450px;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .contato-mapa iframe {
+        height: 300px;
+    }
+}
+
+.rodape {
+    padding: 80px 0;
+    background-color: var(--cor-principal);
+}
+
+/* Ajustes no rodapé */
+.rodape-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Ajuste da logo do rodapé */
+.rodape-logo {
+    height: 60px;
+    /* Aumentado de 40px para 60px */
+    margin: 0 auto 30px;
+    display: block;
+}
+
+.rodape-texto {
+    color: var(--cor-branca);
+    font-size: 16px;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.rodape-texto:last-child {
+    margin-bottom: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .topo-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .topo-links {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Ajuste responsivo para telas menores */
+@media (max-width: 768px) {
+
+    .topo-logo-imagem,
+    .rodape-logo {
+        height: 50px;
+        /* Tamanho um pouco menor em dispositivos móveis */
+    }
+}
+
+/* Classes comuns */
+.titulo-secao {
+    font-size: 32px;
+    color: var(--cor-principal);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.texto-padrao {
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--cor-texto);
+}
+
+/* Componentes */
+.btn {
+    display: inline-block;
+    background-color: var(--cor-principal);
+    color: var(--cor-branca);
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--cor-hover);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .secao-padrao {
+        padding: 60px 0;
+    }
+
+    .titulo-secao {
+        font-size: 28px;
+    }
+
+    .texto-padrao {
+        font-size: 16px;
+    }
+}
+
+/* Estilos para página de especialidades */
+.especialidades-banner {
+    background-color: var(--cor-principal);
+    height: 300px;
+}
+
+.especialidades-banner-container {
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.especialidades-banner-titulo {
+    font-size: 40px;
+    color: var(--cor-branca);
+    text-align: center;
+}
+
+.especialidades-areas {
+    padding: 100px 0;
+}
+
+.especialidades-areas-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.especialidades-areas-titulo {
+    font-size: 32px;
+    color: var(--cor-principal);
+    margin-bottom: 30px;
+}
+
+.especialidade-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 80px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.especialidade-area:last-child {
+    border-bottom: none;
+}
+
+.especialidade-area-img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    margin: 30px 0;
+    transition: transform 0.3s ease;
+}
+
+.especialidade-area-img:hover {
+    transform: scale(1.02);
+}
+
+.especialidade-area-texto {
+    max-width: 800px;
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--cor-texto);
+}
+
+.horarios {
+    padding: 100px 0;
+    background-color: var(--cor-clara);
+}
+
+.horarios-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.horarios-titulo {
+    font-size: 32px;
+    color: var(--cor-principal);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.horarios-tabela {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--cor-branca);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.horarios-tabela th,
+.horarios-tabela td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.horarios-tabela th {
+    background-color: var(--cor-principal);
+    color: var(--cor-branca);
+    font-weight: 600;
+}
+
+.horarios-tabela tr:nth-child(even) {
+    background-color: #f8f8f8;
+}
+
+@media (max-width: 768px) {
+    .especialidade-area {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .especialidade-area-img {
+        width: 100%;
+        max-width: 300px;
+        height: 300px;
+    }
+
+    .horarios-tabela {
+        font-size: 14px;
+    }
+}
+
+.especialidades-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.especialidades-links a {
+    color: var(--cor-branca);
+    font-size: 18px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border: 2px solid var(--cor-branca);
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.especialidades-links a:hover {
+    background-color: var(--cor-branca);
+    color: var(--cor-principal);
+}
+
+@media (max-width: 768px) {
+    .especialidades-links {
+        gap: 10px;
+    }
+
+    .especialidades-links a {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+
+    .especialidades-banner-titulo {
+        font-size: 32px;
+    }
+}
