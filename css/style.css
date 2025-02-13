@@ -1,11 +1,15 @@
 /* Variáveis de cores */
 :root {
-    --cor-principal: #0d6e71;
-    --cor-hover: #00cad1;
-    --cor-texto: #666;
-    --cor-clara: #f7f7f7;
+    --cor-principal: #2c88d9;
+    /* Azul mais vibrante e moderno */
+    --cor-hover: #1a6cb7;
+    /* Azul mais escuro para hover */
+    --cor-texto: #444444;
+    /* Cinza mais escuro para melhor legibilidade */
+    --cor-clara: #f0f7ff;
+    /* Azul ultra claro para fundos */
     --cor-branca: #fff;
-    --sombra-padrao: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --sombra-padrao: 0 2px 10px rgba(44, 136, 217, 0.1);
 }
 
 html {
